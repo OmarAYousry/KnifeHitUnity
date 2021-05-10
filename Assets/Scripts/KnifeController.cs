@@ -16,6 +16,8 @@ public class KnifeController : MonoBehaviour
 
     private KnifeBehaviour currentKnifeBehaviour = null;
 
+    #region events
+
     public delegate void ScoreIncrementHandler(int scoreIncrease);
     public event ScoreIncrementHandler OnScoreIncrease;    
     
@@ -24,6 +26,8 @@ public class KnifeController : MonoBehaviour
 
     public delegate void GameOverHandler();
     public event GameOverHandler OnGameOver;
+
+    #endregion
 
     private void Start()
     {
