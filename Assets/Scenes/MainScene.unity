@@ -1524,8 +1524,8 @@ MonoBehaviour:
     type: 3}
   knivesLeft: 7
   lodgeFactor: 1
-  scorePerKnife: 10
-  scorePerApple: 50
+  scorePerKnife: 25
+  scorePerApple: 100
 --- !u!114 &1518994750
 MonoBehaviour:
   m_ObjectHideFlags: 0
