@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.InteropServices;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -20,6 +21,9 @@ public class GameController : MonoBehaviour
     private Text storePopupText = null;
 
     public static bool IsQuitting { get; private set; } = false;
+
+    [DllImport("__Internal")]
+    private static extern void OpenNewTab(string url);
 
     void Start()
     {
@@ -52,7 +56,12 @@ public class GameController : MonoBehaviour
 
     public void OpenDownloadLink()
     {
-        Application.OpenURL("https://play.google.com/store/apps/details?id=com.ketchapp.knifehit");
+        string url = "https://play.google.com/store/apps/details?id=com.ketchapp.knifehit";
+#if !UNITY_EDITOR && UNITY_WEBGL
+                OpenNewTab(url);
+#else
+        Application.OpenURL(url);
+#endif
     }
 
     private void OnApplicationQuit()
