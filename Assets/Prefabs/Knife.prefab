@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3289674529031716033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 0.75, y: 2.2125, z: 1}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
+  m_LocalScale: {x: 0.9375, y: 2.765625, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,10 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifeRigidBody: {fileID: 4771308582460417012}
+  knifeCollider: {fileID: 2294673887722028613}
+  launchPower: 30
   sfxSource: {fileID: 5560669666690678533}
   lodgeEffect: {fileID: 8300000, guid: 9ba94a8399ecc954fa2884c6c73c9f7a, type: 3}
   appleEffect: {fileID: 8300000, guid: 4d94515783bb4ed4294c59551e06a2be, type: 3}
   clashEffect: {fileID: 8300000, guid: 01b989d5ac258e94996a2aedf9607cd1, type: 3}
+  timeToWait: 0.5
 --- !u!61 &2294673887722028613
 BoxCollider2D:
   m_ObjectHideFlags: 0

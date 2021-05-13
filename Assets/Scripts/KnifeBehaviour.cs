@@ -55,7 +55,7 @@ public class KnifeBehaviour : MonoBehaviour
         if (isLaunched)
             return;
 
-        Vector2 forceVector = new Vector2(0f, 20f);
+        Vector2 forceVector = new Vector2(0f, launchPower);
         knifeRigidBody.AddForce(forceVector, ForceMode2D.Impulse);
         isLaunched = true;
     }
