@@ -4,6 +4,11 @@ public class KnifeBehaviour : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D knifeRigidBody = null;
+    [SerializeField]
+    private Collider2D knifeCollider = null;
+    [SerializeField]
+    [Range(5f, 50f)]
+    private float launchPower = 20f;
 
     private KnifeController knifeController = null;
 
@@ -74,7 +79,7 @@ public class KnifeBehaviour : MonoBehaviour
         float verticalDistance = Random.Range(1f, 2f);
         finalPosition = transform.position - new Vector3(horizontalDistance, verticalDistance, 0f);
         knifeRigidBody.velocity = new Vector3(0f, 0f, 0f);
-        Destroy(GetComponent<Collider2D>());
+        Destroy(knifeCollider);
         isDeflecting = true;
     }
 
@@ -103,6 +108,9 @@ public class KnifeBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (!isLaunched)
+            return;
+
         if (collider.gameObject.CompareTag("Log"))
         {
             LodgeKnife(collider.transform);
